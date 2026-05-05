@@ -1,29 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Samanthraj Resume</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samanthraj Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #a0a0a0;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 12px;
+      background: white;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .resume-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .projects {
+      display: grid;
+      gap: 15px;
+    }
+
+    .project {
+      padding: 18px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 14px;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .project a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .contact {
+      margin-top: 25px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .contact a:hover {
+      background: white;
+      color: black;
+    }
+  </style>
 </head>
-<body style="font-family:Arial; max-width:800px; margin:auto; padding:40px;">
-  <h1>Samanthraj G</h1>
-  <p>Software Developer | AI | Backend | Automation</p>
 
-  <h2>Resume</h2>
-  <a href="resume.pdf" target="_blank">View Resume</a>
+<body>
+  <div class="container">
+    <div class="card">
 
-  <h2>Projects</h2>
-  <ul>
-    <li><a href="https://github.com/samanthraj/Rag_application_to_solve_privacy_and_hallucination">Privacy-Preserving RAG Chatbot</a></li>
-    <li><a href="https://github.com/samanthraj/Youtube-content-creator-and-moderator">YouTube Automation</a></li>
-    <li> <a href = "https://github.com/samanthraj/Youtube_automation">  Youtube_automation</a></li>
-    <li> <a href = "https://github.com/samanthraj/chat_room_using_php"> chat_room_using_php </a></li>
-     <li> <a href = "https://github.com/samanthraj/Hotel_Reservation_System"> Hotel_Reservation_System </a></li>
-  </ul>
+      <h1>Samanthraj G</h1>
+      <p class="subtitle">
+        Software Developer • AI • Backend • Automation
+      </p>
 
-  <h2>Contact</h2>
-  <p>Email: garelasamanthraj@gmail.com</p>
-  <p><a href="https://github.com/samanthraj">GitHub</a></p>
-  <p><a href ="https://www.linkedin.com/in/samanth-raj-garela-80346524a/ "> Linkdin</a></p>
+      <h2>Resume</h2>
+      <a class="resume-btn" href="resume.pdf" target="_blank">
+        View Resume
+      </a>
+
+      <h2>Projects</h2>
+      <div class="projects">
+
+        <div class="project">
+          <a href="https://github.com/samanthraj/Rag_application_to_solve_privacy_and_hallucination" target="_blank">
+            Privacy-Preserving RAG Chatbot
+          </a>
+        </div>
+
+        <div class="project">
+          <a href="https://github.com/samanthraj/Youtube-content-creator-and-moderator" target="_blank">
+            YouTube Content Creator & Moderator
+          </a>
+        </div>
+
+        <div class="project">
+          <a href="https://github.com/samanthraj/Youtube_automation" target="_blank">
+            YouTube Automation
+          </a>
+        </div>
+
+        <div class="project">
+          <a href="https://github.com/samanthraj/chat_room_using_php" target="_blank">
+            Chat Room using PHP
+          </a>
+        </div>
+
+        <div class="project">
+          <a href="https://github.com/samanthraj/Hotel_Reservation_System" target="_blank">
+            Hotel Reservation System
+          </a>
+        </div>
+
+      </div>
+
+      <h2>Contact</h2>
+      <div class="contact">
+        <a href="mailto:garelasamanthraj@gmail.com">Email</a>
+        <a href="https://github.com/samanthraj" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/samanth-raj-garela-80346524a/" target="_blank">LinkedIn</a>
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>
