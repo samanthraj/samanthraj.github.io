@@ -1,177 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Samanthraj Portfolio</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samanthraj | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter',sans-serif;
+      background:#07111f;
+      color:#fff;
+      overflow-x:hidden;
     }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 40px 20px;
+    body::before{
+      content:'';
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0,153,255,.18), transparent 30%),
+        radial-gradient(circle at 80% 60%, rgba(0,89,255,.15), transparent 30%),
+        linear-gradient(#07111f,#030814);
+      z-index:-2;
     }
-
-    .container {
-      width: 100%;
-      max-width: 900px;
+    .grid{
+      position:fixed;
+      inset:0;
+      background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size:40px 40px;
+      z-index:-1;
     }
-
-    .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: 30px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    nav{
+      position:fixed;
+      top:0;width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 8%;
+      backdrop-filter:blur(12px);
+      background:rgba(0,0,0,.25);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      z-index:999;
     }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    nav a{color:white;text-decoration:none;margin-left:24px;font-weight:500}
+    .logo{font-size:1.3rem;font-weight:800;color:#4da6ff}
+    section{padding:120px 8%}
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:space-between;gap:60px}
+    .hero-text{max-width:620px}
+    .tag{color:#4da6ff;letter-spacing:3px;font-size:.85rem;margin-bottom:20px}
+    h1{font-size:4.2rem;line-height:1.05;margin-bottom:20px}
+    .blue{color:#4da6ff}
+    .hero p{font-size:1.1rem;color:#b8c5d6;line-height:1.8;margin-bottom:30px}
+    .btns{display:flex;gap:16px}
+    .btn{
+      padding:14px 22px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:600;
+      transition:.3s;
     }
-
-    .subtitle {
-      color: #a0a0a0;
-      font-size: 1.1rem;
-      margin-bottom: 30px;
+    .primary{background:#1677ff;color:white}
+    .secondary{border:1px solid rgba(255,255,255,.2);color:white}
+    .btn:hover{transform:translateY(-4px)}
+    .hero-img img{
+      width:380px;
+      border-radius:28px;
+      border:2px solid rgba(77,166,255,.35);
+      box-shadow:0 0 40px rgba(0,102,255,.25);
     }
-
-    h2 {
-      margin-top: 30px;
-      margin-bottom: 15px;
-      font-size: 1.5rem;
+    .section-title{font-size:2rem;margin-bottom:30px}
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:22px;
     }
-
-    .resume-btn {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 12px;
-      background: white;
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+    .card{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;
+      padding:24px;
+      transition:.3s;
     }
-
-    .resume-btn:hover {
-      transform: translateY(-3px);
+    .card:hover{transform:translateY(-8px);border-color:#1677ff}
+    .card h3{margin-bottom:12px}
+    .card p{color:#b8c5d6;margin-bottom:18px}
+    .card a{color:#4da6ff;text-decoration:none}
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
     }
-
-    .projects {
-      display: grid;
-      gap: 15px;
+    .skill{
+      padding:12px 18px;
+      background:rgba(22,119,255,.12);
+      border:1px solid rgba(77,166,255,.18);
+      border-radius:999px;
     }
-
-    .project {
-      padding: 18px;
-      background: rgba(255,255,255,0.04);
-      border-radius: 14px;
-      transition: 0.3s;
+    .timeline{display:grid;gap:18px}
+    .item{
+      padding:20px;
+      border-left:3px solid #1677ff;
+      background:rgba(255,255,255,.03);
+      border-radius:0 16px 16px 0;
     }
-
-    .project:hover {
-      transform: translateY(-5px);
-      background: rgba(255,255,255,0.08);
+    footer{
+      padding:40px 8%;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:#9fb0c8;
     }
-
-    .project a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: bold;
-    }
-
-    .contact {
-      margin-top: 25px;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .contact a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 16px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-
-    .contact a:hover {
-      background: white;
-      color: black;
+    @media(max-width:900px){
+      .hero{flex-direction:column-reverse;text-align:center;padding-top:120px}
+      h1{font-size:3rem}
+      .btns{justify-content:center}
+      nav{padding:18px 5%}
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="card">
-
-      <h1>Samanthraj G</h1>
-      <p class="subtitle">
-        Software Developer • AI • Backend • Automation
-      </p>
-
-      <h2>Resume</h2>
-      <a class="resume-btn" href="resume.pdf" target="_blank">
-        View Resume
-      </a>
-
-      <h2>Projects</h2>
-      <div class="projects">
-
-        <div class="project">
-          <a href="https://github.com/samanthraj/Rag_application_to_solve_privacy_and_hallucination" target="_blank">
-            Privacy-Preserving RAG Chatbot
-          </a>
-        </div>
-
-        <div class="project">
-          <a href="https://github.com/samanthraj/Youtube-content-creator-and-moderator" target="_blank">
-            YouTube Content Creator & Moderator
-          </a>
-        </div>
-
-        <div class="project">
-          <a href="https://github.com/samanthraj/Youtube_automation" target="_blank">
-            YouTube Automation
-          </a>
-        </div>
-
-        <div class="project">
-          <a href="https://github.com/samanthraj/chat_room_using_php" target="_blank">
-            Chat Room using PHP
-          </a>
-        </div>
-
-        <div class="project">
-          <a href="https://github.com/samanthraj/Hotel_Reservation_System" target="_blank">
-            Hotel Reservation System
-          </a>
-        </div>
-
-      </div>
-
-      <h2>Contact</h2>
-      <div class="contact">
-        <a href="mailto:garelasamanthraj@gmail.com">Email</a>
-        <a href="https://github.com/samanthraj" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/samanth-raj-garela-80346524a/" target="_blank">LinkedIn</a>
-      </div>
-
+<div class="grid"></div>
+<nav>
+  <div class="logo">Samanthraj.dev</div>
+  <div>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-text">
+    <div class="tag">SOFTWARE DEVELOPER • AI • AUTOMATION</div>
+    <h1>Building <span class="blue">AI-Powered</span><br/>Scalable Systems.</h1>
+    <p>I build backend systems, AI workflows, automation pipelines, and developer tools focused on solving real-world problems.</p>
+    <div class="btns">
+      <a class="btn primary" href="resume.pdf" target="_blank">Download Resume</a>
+      <a class="btn secondary" href="#projects">View Projects</a>
     </div>
   </div>
+  <div class="hero-img">
+    <img src="profile.jpg" alt="Samanthraj" />
+  </div>
+</section>
+<section id="projects">
+  <h2 class="section-title">Featured Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>Privacy-Preserving RAG Chatbot</h3>
+      <p>Flask + React based privacy-focused AI retrieval system.</p>
+      <a href="https://github.com/samanthraj/Rag_application_to_solve_privacy_and_hallucination">View Project</a>
+    </div>
+    <div class="card">
+      <h3>YouTube Automation</h3>
+      <p>Automation pipelines for creator workflows and content operations.</p>
+      <a href="https://github.com/samanthraj/Youtube_automation">View Project</a>
+    </div>
+    <div class="card">
+      <h3>Hotel Reservation System</h3>
+      <p>DBMS-powered reservation management platform.</p>
+      <a href="https://github.com/samanthraj/Hotel_Reservation_System">View Project</a>
+    </div>
+    <div class="card">
+      <h3>Chat Room using PHP</h3>
+      <p>Real-time communication app with PHP and MySQL.</p>
+      <a href="https://github.com/samanthraj/chat_room_using_php">View Project</a>
+    </div>
+  </div>
+</section>
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills">
+    <div class="skill">Python</div>
+    <div class="skill">React</div>
+    <div class="skill">Flask</div>
+    <div class="skill">MySQL</div>
+    <div class="skill">PostgreSQL</div>
+    <div class="skill">PHP</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">REST APIs</div>
+    <div class="skill">Git</div>
+    <div class="skill">Linux</div>
+  </div>
+</section>
+<section id="education">
+  <h2 class="section-title">Education</h2>
+  <div class="timeline">
+    <div class="item">
+      <h3>ICFAI University</h3>
+      <p>B.Tech in Computer Science • CGPA 7.5</p>
+    </div>
+    <div class="item">
+      <h3>Sri Chaitanya Junior College</h3>
+      <p>Graduated 2022 • Score 8.8</p>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="btns">
+    <a class="btn secondary" href="mailto:garelasamanthraj@gmail.com">Email</a>
+    <a class="btn secondary" href="https://github.com/samanthraj">GitHub</a>
+    <a class="btn secondary" href="https://www.linkedin.com/in/samanth-raj-garela-80346524a/">LinkedIn</a>
+  </div>
+</section>
+<footer>
+  © 2026 Samanthraj G. Built with HTML, CSS & ambition.
+</footer>
 </body>
 </html>
